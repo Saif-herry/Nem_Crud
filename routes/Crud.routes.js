@@ -26,5 +26,16 @@ crudRouter.post("/post",async(req,res)=>{
 })
 
 
+crudRouter.delete('/delete/:id',async(req,res)=>{
+    const userId = req.params.id;
+    try{
+       const user = await crudModel.findByIdAndDelete({_id:userId});
+       res.status(200).send(user)
+    }
+    catch(err){
+       res.status(500).send({message:err.message})
+    }
+})
+
 module.exports = crudRouter;
 
