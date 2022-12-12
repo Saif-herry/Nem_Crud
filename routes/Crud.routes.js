@@ -37,5 +37,16 @@ crudRouter.delete('/delete/:id',async(req,res)=>{
     }
 })
 
+crudRouter.patch('/edit/:id',async(req,res)=>{
+      try{
+         const user = await crudModel.findByIdAndUpdate(req.params.id,req.body);
+         user.save();
+         res.status(200).send(user);
+      }
+      catch(err){
+        res.status(500).send({message:err.message});
+      }
+})
+
 module.exports = crudRouter;
 
