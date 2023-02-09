@@ -8,6 +8,6 @@ const crudSchema = mongoose.Schema({
 })
 
 
-const crudModel = mongoose.model('crud1',crudSchema);
+const crudModel = mongoose.model('crud1',crudSchema)
 
-module.exports = crudModel;
+module.exports = crudModel
