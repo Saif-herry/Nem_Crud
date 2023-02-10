@@ -31,7 +31,7 @@ crudRouter.delete('/delete/:id', async (req, res) => {
   } catch (err) {
     res.status(500).send({ message: err.message })
   }
-})
+});
 
 crudRouter.patch('/edit/:id', async (req, res) => {
   try {
